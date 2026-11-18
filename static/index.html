@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeuroForge BioMaterials — персональные умные биоматериалы</title>
+  <meta name="description" content="AI-платформа для создания персонализированных биосовместимых материалов. От снимка пациента до готового к печати импланта за часы.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="theme-color" content="#253942">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" type="image/png" href="/icons/favicon.png">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="NeuroForge">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#" class="logo">
+        <span class="logo-mark">NF</span>
+        <span class="logo-text">NeuroForge<br><small>BioMaterials</small></span>
+      </a>
+      <nav class="nav">
+        <a href="#problem">Проблема</a>
+        <a href="#solution">Решение</a>
+        <a href="#demo">Попробовать</a>
+        <a href="#how">Как работает</a>
+        <a href="#roadmap">Планы</a>
+        <a href="#" id="install-btn" class="btn btn-sm btn-outline hidden">Установить приложение</a>
+        <a href="#contact" class="btn btn-sm">Связаться</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <p class="eyebrow">Research Use Only · 2026</p>
+        <h1>Персональные биоматериалы<br>под конкретного пациента</h1>
+        <p class="hero-lead">
+          AI-платформа, которая берёт снимок <span class="term" title="МРТ — магнитно-резонансная томография: безопасный способ «заглянуть» внутрь тела без рентгена">МРТ</span> или <span class="term" title="КТ — компьютерная томография: подробные снимки костей и органов с помощью рентгена">КТ</span> и за часы выдаёт готовый к печати 
+          <span class="term" title="Биосовместимый — материал, который организм принимает и не отторгает">биосовместимый</span> материал — с учётом анатомии, прочности и поведения в организме.
+        </p>
+        <div class="simple-box">
+          <strong>Простыми словами:</strong> врач загружает снимок пациента → система сама проектирует «заплатку» под его кость или сустав → на выходе файл, который можно сразу печатать на 3D-принтере.
+        </div>
+        <div class="hero-actions">
+          <a href="#demo" class="btn btn-primary">Попробовать демо</a>
+          <a href="#solution" class="btn btn-outline">Как это работает</a>
+        </div>
+        <p class="hero-note">Студенческий deep-tech проект · в поисках грантовой поддержки</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem -->
+  <section id="problem" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Проблема</h2>
+        <p>Серийные импланты часто не подходят пациенту, а ждать индивидуальный — слишком долго и дорого</p>
+      </div>
+
+      <div class="callout">
+        <strong>Суть проблемы одной фразой:</strong> сейчас почти все импланты делают «на средний рост и вес». У конкретного человека кость может быть другой формы, плотности и нагрузки — и готовый имплант просто не ложится идеально.
+      </div>
+
+      <div class="grid-4">
+        <div class="card">
+          <div class="card-accent"></div>
+          <h3>Не подходит по форме</h3>
+          <p>Готовый имплант редко идеально ложится на кость конкретного человека. Остаются зазоры, лишние нагрузки и риск осложнений.</p>
+          <p class="card-note">Как покупка обуви только 42-го размера — кому-то тесно, кому-то велико.</p>
+        </div>
+        <div class="card">
+          <div class="card-accent"></div>
+          <h3>Слишком долго ждать</h3>
+          <p>Ручная разработка индивидуального импланта тянется неделями и стоит очень дорого. Пациент всё это время ждёт операции.</p>
+          <p class="card-note">Инженеры вручную чертят и подгоняют модель — это часы и дни работы.</p>
+        </div>
+        <div class="card">
+          <div class="card-accent"></div>
+          <h3>Всё разрозненно</h3>
+          <p>Снимок, дизайн, материал и печать до сих пор живут в разных системах. Данные теряются, возникают ошибки при передаче.</p>
+          <p class="card-note">Как собирать мебель, когда инструкция, детали и инструмент лежат в трёх разных магазинах.</p>
+        </div>
+        <div class="card">
+          <div class="card-accent"></div>
+          <h3>Материалы пока «тупые»</h3>
+          <p>Почти нет решений, которые сами заживляются, меняют форму или адаптируются к тканям. Обычно это просто «мёртвый» пластик или металл.</p>
+          <p class="card-note">Хочется материал, который ведёт себя как живая ткань, а не как деталь из конструктора.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution -->
+  <section id="solution" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Решение</h2>
+        <p>Одна система, которая берёт снимок пациента и выдаёт готовый к печати персональный биоматериал</p>
+      </div>
+
+      <div class="callout callout-accent">
+        <strong>Что мы делаем:</strong> объединяем искусственный интеллект, физику материалов и 3D-печать в один понятный пайплайн. Врач или исследователь загружает снимок — на выходе получает файл для принтера и отчёт.
+      </div>
+
+      <div class="pipeline">
+        <div class="pipeline-step">
+          <div class="step-num">01</div>
+          <h3>Снимок</h3>
+          <p>МРТ или КТ<br>из клиники</p>
+          <p class="step-hint">Обычные медицинские снимки, которые уже делают в больницах</p>
+        </div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step">
+          <div class="step-num">02</div>
+          <h3>Дизайн</h3>
+          <p>ИИ + физика<br>под пациента</p>
+          <p class="step-hint">Система учитывает форму кости, нагрузки и то, как материал будет себя вести</p>
+        </div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step">
+          <div class="step-num">03</div>
+          <h3>Материал</h3>
+          <p>Умный и<br>безопасный</p>
+          <p class="step-hint">Выбираем или настраиваем биосовместимый материал из библиотеки</p>
+        </div>
+        <div class="pipeline-arrow">→</div>
+        <div class="pipeline-step">
+          <div class="step-num">04</div>
+          <h3>Печать</h3>
+          <p>Готовый файл<br>для 3D-принтера</p>
+          <p class="step-hint">Можно сразу отправлять на печать — без ручной доработки</p>
+        </div>
+      </div>
+
+      <div class="simple-box" style="margin-top: 32px;">
+        <strong>Коротко:</strong> вместо недель ручной работы инженеров — минуты или часы автоматического расчёта. И не «средний» имплант, а именно под этого пациента.
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Demo -->
+  <section id="demo" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Попробовать прототип</h2>
+        <p>Загрузи КТ головы с дефектом свода черепа: система найдёт дефект, построит пластину по его форме, заполнит её пористой решёткой и выдаст 3D-модель (STL). Режим «Картинка» оставлен для быстрого упрощённого теста.</p>
+      </div>
+
+      <div class="callout">
+        <strong>Что происходит в демо:</strong> вы вводите данные пациента и загружаете КТ → система выделяет кость, находит дефект свода, восстанавливает контур черепа и строит по нему пористый каркас (пористость нужна, чтобы клетки и сосуды могли прорастать). Результат можно посмотреть в 3D и скачать как STL. Это исследовательский прототип, не медицинское изделие.
+      </div>
+
+      <div class="demo-box">
+        <form class="patient-form" id="patient-form" novalidate>
+          <h3>1. Данные пациента</h3>
+          <p class="form-hint">Параметры влияют на размер, пористость, жёсткость каркаса и выбор материала. Данные не сохраняются на сервере.</p>
+          <div class="form-grid">
+            <label class="field">
+              <span>Возраст, лет</span>
+              <input type="number" name="age" min="18" max="95" step="1" placeholder="например, 45" required>
+            </label>
+            <label class="field">
+              <span>Пол</span>
+              <select name="sex" required>
+                <option value="">Выберите…</option>
+                <option value="male">Мужской</option>
+                <option value="female">Женский</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Рост, см</span>
+              <input type="number" name="height_cm" min="120" max="230" step="1" placeholder="например, 175" required>
+            </label>
+            <label class="field">
+              <span>Вес, кг</span>
+              <input type="number" name="weight_kg" min="30" max="250" step="0.5" placeholder="например, 72" required>
+            </label>
+            <label class="field">
+              <span>Физическая активность</span>
+              <select name="activity" required>
+                <option value="">Выберите…</option>
+                <option value="low">Низкая (почти не занимаюсь спортом)</option>
+                <option value="moderate">Умеренная (прогулки, 1–2 тренировки в неделю)</option>
+                <option value="high">Высокая (3–5 тренировок в неделю)</option>
+                <option value="athlete">Спорт на высоком уровне</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Нагрузка на работе</span>
+              <select name="occupation" required>
+                <option value="">Выберите…</option>
+                <option value="sedentary">Сидячая работа</option>
+                <option value="mixed">Смешанная (ходьба, лёгкая нагрузка)</option>
+                <option value="physical">Тяжёлый физический труд</option>
+              </select>
+            </label>
+          </div>
+          <label class="check">
+            <input type="checkbox" name="smoker" value="true">
+            <span>Курю</span>
+          </label>
+        </form>
+
+        <h3 class="step-title">2. Снимок</h3>
+        <div class="mode-switch" id="mode-switch">
+          <button type="button" class="mode-btn active" data-mode="ct">КТ черепа (3D)</button>
+          <button type="button" class="mode-btn" data-mode="image">Картинка (упрощённо)</button>
+        </div>
+
+        <div id="ct-mode">
+          <div class="demo-upload" id="ct-zone">
+            <input type="file" id="ct-input" accept=".zip,.nii,.gz" hidden>
+            <div class="upload-content" id="ct-content">
+              <div class="upload-icon">↑</div>
+              <p class="upload-title">Перетащи КТ головы сюда или нажми для выбора</p>
+              <p class="upload-hint">.zip с DICOM-срезами или .nii / .nii.gz · до 150 МБ · аксиальная КТ в костном или обычном окне</p>
+            </div>
+            <div class="upload-preview hidden" id="ct-preview">
+              <p class="ct-name" id="ct-name"></p>
+              <button type="button" class="btn btn-sm btn-outline" id="ct-change">Заменить</button>
+            </div>
+          </div>
+          <label class="check">
+            <input type="checkbox" id="simulate-defect">
+            <span>Смоделировать дефект (если на КТ череп целый — для проверки сайта)</span>
+          </label>
+        </div>
+
+        <div id="image-mode" class="hidden">
+        <div class="demo-upload" id="upload-zone">
+            <input type="file" id="file-input" accept="image/*" hidden>
+            <div class="upload-content" id="upload-content">
+              <div class="upload-icon">↑</div>
+              <p class="upload-title">Перетащи снимок сюда или нажми для выбора</p>
+              <p class="upload-hint">PNG, JPG · до 15 МБ · работает даже с обычными фото</p>
+            </div>
+            <div class="upload-preview hidden" id="upload-preview">
+              <img id="preview-img" alt="Превью">
+              <button type="button" class="btn btn-sm btn-outline" id="change-btn">Заменить</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="demo-actions">
+          <button type="button" class="btn btn-primary" id="process-btn" disabled>
+            Запустить пайплайн
+          </button>
+          <span class="demo-status" id="status-text"></span>
+        </div>
+
+        <div class="demo-progress hidden" id="progress-box">
+          <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+          <p id="progress-label">Анализ снимка…</p>
+        </div>
+        <div class="error-box hidden" id="error-box" role="alert"></div>
+
+        <div class="demo-results hidden" id="results-box">
+          <h3>Результат прототипа</h3>
+          <div class="results-grid">
+            <div class="result-card">
+              <span class="result-label">Рекомендуемый материал</span>
+              <span class="result-value" id="res-material">—</span>
+            </div>
+            <div class="result-card">
+              <span class="result-label">Структура</span>
+              <span class="result-value" id="res-structure">—</span>
+            </div>
+            <div class="result-card">
+              <span class="result-label">Жёсткость (МПа)</span>
+              <span class="result-value" id="res-modulus">—</span>
+            </div>
+            <div class="result-card">
+              <span class="result-label">Пористость (цель)</span>
+              <span class="result-value" id="res-porosity">—</span>
+            </div>
+            <div class="result-card">
+              <span class="result-label">Ошибка посадки</span>
+              <span class="result-value" id="res-fit">—</span>
+            </div>
+            <div class="result-card">
+              <span class="result-label">Время дизайна</span>
+              <span class="result-value" id="res-time">—</span>
+            </div>
+            <div class="result-card ct-only hidden">
+              <span class="result-label">Размер дефекта</span>
+              <span class="result-value" id="res-defect">—</span>
+            </div>
+            <div class="result-card ct-only hidden">
+              <span class="result-label">Толщина свода</span>
+              <span class="result-value" id="res-thick">—</span>
+            </div>
+            <div class="result-card ct-only hidden">
+              <span class="result-label">Объём / масса каркаса</span>
+              <span class="result-value" id="res-vol">—</span>
+            </div>
+            <div class="result-card">
+              <span class="result-label">ИМТ</span>
+              <span class="result-value" id="res-bmi">—</span>
+            </div>
+            <div class="result-card">
+              <span class="result-label">Индекс нагрузки</span>
+              <span class="result-value" id="res-load">—</span>
+            </div>
+            <div class="result-card">
+              <span class="result-label">Индекс качества кости</span>
+              <span class="result-value" id="res-bone">—</span>
+            </div>
+          </div>
+          <div class="viewer-box hidden" id="viewer-box">
+            <canvas id="viewer"></canvas>
+            <div class="viewer-bar">
+              <label class="check"><input type="checkbox" id="viewer-skull" checked><span>Показать череп</span></label>
+              <span class="viewer-hint">Тяни, чтобы вращать · колесо / щипок — масштаб</span>
+              <span class="viewer-btns">
+                <button type="button" class="btn btn-sm btn-outline" id="viewer-zoom-out">−</button>
+                <button type="button" class="btn btn-sm btn-outline" id="viewer-zoom-in">+</button>
+              </span>
+            </div>
+          </div>
+          <div class="adjustments hidden" id="adjustments-box">
+            <h4>Как учтены данные пациента</h4>
+            <ul id="adjustments-list"></ul>
+          </div>
+          <div class="results-actions">
+            <a href="#" class="btn btn-primary hidden" id="download-stl" download>Скачать STL</a>
+            <p class="results-disclaimer" id="res-disclaimer"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Что мы делаем</h2>
+        <p>Линейка продуктов от MVP до долгосрочного видения</p>
+      </div>
+
+      <div class="callout">
+        <strong>MVP</strong> — минимально рабочая версия продукта. То, что уже можно показывать и тестировать. Дальше — более «умные» материалы.
+      </div>
+
+      <div class="products">
+        <div class="product-row">
+          <div class="product-badge mvp">P0 · MVP</div>
+          <div class="product-info">
+            <h3>Каркасы для костей и суставов</h3>
+            <p>Пористые структуры из <span class="term" title="PCL (поликапролактон) — биоразлагаемый пластик, который организм постепенно заменяет своей тканью">PCL</span>, печать методом <span class="term" title="FDM — самый распространённый способ 3D-печати: материал выдавливается через нагретое сопло слоями">FDM</span></p>
+            <p class="product-explain">Пористость (дырочки) нужна, чтобы костные клетки и сосуды могли прорастать внутрь каркаса и постепенно его «заселять».</p>
+          </div>
+          <span class="product-status">Сейчас</span>
+        </div>
+        <div class="product-row">
+          <div class="product-badge">P1</div>
+          <div class="product-info">
+            <h3>Гидрогели, которые сами «заживляются»</h3>
+            <p>Для повязок и мягких тканей</p>
+            <p class="product-explain"><span class="term" title="Гидрогель — мягкий материал, похожий на желе, который хорошо удерживает воду и похож на живые ткани">Гидрогель</span> может «затягивать» небольшие повреждения сам, без дополнительного вмешательства.</p>
+          </div>
+          <span class="product-status">Следующий</span>
+        </div>
+        <div class="product-row">
+          <div class="product-badge">P2</div>
+          <div class="product-info">
+            <h3>Импланты, которые меняют форму</h3>
+            <p>С <span class="term" title="Память формы — материал «запоминает» исходную форму и возвращается к ней при нагреве или другом стимуле">памятью формы</span></p>
+            <p class="product-explain">Можно ввести компактно, а внутри тела материал сам примет нужную форму.</p>
+          </div>
+          <span class="product-status">Roadmap</span>
+        </div>
+        <div class="product-row">
+          <div class="product-badge">P3</div>
+          <div class="product-info">
+            <h3>Части протезов и «умные» импланты</h3>
+            <p>С датчиками и самовосстановлением</p>
+            <p class="product-explain">Долгосрочное видение: импланты, которые сами сообщают о состоянии и умеют восстанавливать мелкие повреждения.</p>
+          </div>
+          <span class="product-status">Vision</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Как это работает</h2>
+        <p>Как ИИ проектирует материал с учётом реальной физики</p>
+      </div>
+
+      <div class="simple-box">
+        <strong>Главная идея:</strong> мы не просто «рисуем красивую форму». Система проверяет, выдержит ли конструкция нагрузки, как через неё будет проходить жидкость (кровь, тканевая жидкость) и насколько материал совместим с телом.
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-circle">1</div>
+          <h3>Загрузка</h3>
+          <p>Снимок МРТ/КТ<br>Выделяем нужную область<br>Готовим данные для ИИ</p>
+          <p class="step-detail">Система «вырезает» зону интереса (например, дефект кости) и переводит снимок в понятный для расчёта формат.</p>
+        </div>
+        <div class="step">
+          <div class="step-circle">2</div>
+          <h3>Генерация</h3>
+          <p>ИИ предлагает форму<br>Пористые структуры<br>С разной плотностью</p>
+          <p class="step-detail">Алгоритм предлагает несколько вариантов каркаса: где плотнее (для прочности), где свободнее (для прорастания клеток).</p>
+        </div>
+        <div class="step">
+          <div class="step-circle">3</div>
+          <h3>Проверка</h3>
+          <p>Быстрый расчёт прочности<br>Нагрузки и жёсткость<br>Как проходит жидкость</p>
+          <p class="step-detail">Упрощённая физика: выдержит ли конструкция вес и движения, не будет ли слишком жёсткой или мягкой.</p>
+        </div>
+        <div class="step">
+          <div class="step-circle">4</div>
+          <h3>Материал</h3>
+          <p>Выбираем из библиотеки<br>PCL или self-healing<br>Настройки печати</p>
+          <p class="step-detail">Подбираем материал и параметры печати так, чтобы результат был и прочным, и безопасным для организма.</p>
+        </div>
+        <div class="step">
+          <div class="step-circle">5</div>
+          <h3>Результат</h3>
+          <p>Файл для печати<br>Отчёт и цифровой двойник<br>Пакет для производства</p>
+          <p class="step-detail"><span class="term" title="Цифровой двойник — виртуальная копия изделия, по которой можно проверять и улучшать дизайн">Цифровой двойник</span> позволяет потом сравнивать, как материал ведёт себя в реальности и в модели.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results / Demo -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Что уже получилось</h2>
+        <p>Прогнали полный цикл на синтетическом дефекте колена</p>
+      </div>
+
+      <div class="callout">
+        <strong>Что означают цифры:</strong> жёсткость показывает, насколько материал «пружинит» под нагрузкой. Пористость — доля пустот (чем выше, тем легче прорастают клетки, но ниже прочность). Ошибка посадки — насколько точно каркас совпадает с формой кости.
+      </div>
+
+      <div class="metrics">
+        <div class="metric">
+          <div class="metric-value">~400–1000</div>
+          <div class="metric-unit">МПа</div>
+          <div class="metric-label">Жёсткость</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">0.55–0.85</div>
+          <div class="metric-unit">цель</div>
+          <div class="metric-label">Пористость</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">&lt; 1.5</div>
+          <div class="metric-unit">мм</div>
+          <div class="metric-label">Ошибка посадки</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">&lt; 15</div>
+          <div class="metric-unit">мин</div>
+          <div class="metric-label">Время дизайна</div>
+        </div>
+      </div>
+      <div class="demo-note">
+        <strong>Что уже сделано:</strong> синтетический объём → подготовка → пористый каркас → проверка прочности → выбор материала → отчёт и превью. Работает API, есть простой интерфейс и документация.
+      </div>
+    </div>
+  </section>
+
+  <!-- Advantages -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Почему это лучше</h2>
+        <p>Чем NeuroForge отличается от «просто 3D-печати имплантов»</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Всё в одном месте</h3>
+          <p>От снимка до файла для печати — внутри одной системы. Не нужно переносить данные между программами и людьми.</p>
+        </div>
+        <div class="card">
+          <h3>ИИ с учётом физики</h3>
+          <p>Считаем не только форму, но и прочность, проницаемость и совместимость. Красивая модель, которая сломается под нагрузкой, нам не подходит.</p>
+        </div>
+        <div class="card">
+          <h3>Фокус на умных материалах</h3>
+          <p>Не только титан и PEEK — материалы с самовосстановлением и памятью формы. Хотим, чтобы имплант вёл себя ближе к живой ткани.</p>
+        </div>
+        <div class="card">
+          <h3>Быстро</h3>
+          <p>Минуты или часы вместо недель ручной работы. Это важно и для пациента, и для лаборатории, которая тестирует идеи.</p>
+        </div>
+        <div class="card">
+          <h3>Сразу готово к печати</h3>
+          <p>Файл, настройки печати и цифровой двойник с первого дня. Меньше ручных доработок — меньше ошибок.</p>
+        </div>
+        <div class="card">
+          <h3>Путь в клинику</h3>
+          <p>Понятный маршрут от исследований к клиническим пилотам. Мы сразу думаем о том, как это когда-нибудь сможет использоваться у пациентов.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Roadmap -->
+  <section id="roadmap" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Планы по этапам</h2>
+        <p>Реалистичный путь от студенческого прототипа до клинических пилотов</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-phase">Этап 0–1</div>
+          <div class="timeline-time">первые 6 месяцев</div>
+          <ul>
+            <li>Каркас системы и демо</li>
+            <li>Синтетика и открытые МРТ</li>
+            <li>API и простой интерфейс</li>
+            <li>1–2 пилота с лабораториями</li>
+          </ul>
+          <p class="timeline-note">Сейчас мы примерно здесь: есть рабочий прототип и первые результаты на синтетических данных.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-phase">Этап 2</div>
+          <div class="timeline-time">6–12 месяцев</div>
+          <ul>
+            <li>Гидрогели с самовосстановлением</li>
+            <li>Подключение реальных принтеров</li>
+            <li>Проверка в лаборатории</li>
+            <li>Функции для соответствия требованиям</li>
+          </ul>
+          <p class="timeline-note">Переход от «работает на компьютере» к «можно напечатать и проверить в лаборатории».</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-phase">Этап 3</div>
+          <div class="timeline-time">второй год</div>
+          <ul>
+            <li>Материалы с памятью формы</li>
+            <li>Применение для мягких тканей</li>
+            <li>Позвоночник и челюстно-лицевая</li>
+            <li>Путь к регуляторному одобрению</li>
+          </ul>
+          <p class="timeline-note">Расширение областей применения и подготовка к требованиям регуляторов.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-phase">Этап 4</div>
+          <div class="timeline-time">третий год и дальше</div>
+          <ul>
+            <li>Автономные импланты</li>
+            <li>Цифровая фабрика</li>
+            <li>Выход на международный уровень</li>
+            <li>Выделение материального IP</li>
+          </ul>
+          <p class="timeline-note">Долгосрочное видение: от платформы дизайна к полноценной экосистеме.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Business -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Как будем зарабатывать</h2>
+        <p>Модель, которая растёт вместе с проектом</p>
+      </div>
+      <div class="grid-4">
+        <div class="card">
+          <h3>Для исследователей</h3>
+          <p>Подписка + оплата за дизайн для лабораторий и университетов</p>
+          <p class="card-note">Самый близкий рынок на старте: учёные и студенты, которым нужно быстро проверять идеи.</p>
+        </div>
+        <div class="card">
+          <h3>Для клиник</h3>
+          <p>Корпоративные лицензии и услуги</p>
+          <p class="card-note">Когда появятся клинические данные — можно предлагать больницам и центрам ортопедии.</p>
+        </div>
+        <div class="card">
+          <h3>Мост к производству</h3>
+          <p>Комиссия с каждого напечатанного импланта</p>
+          <p class="card-note">Мы помогаем спроектировать — партнёр печатает. Мы получаем долю с заказа.</p>
+        </div>
+        <div class="card">
+          <h3>Своя фабрика</h3>
+          <p>Своё или совместное производство полного цикла</p>
+          <p class="card-note">Дальняя цель: контролировать весь путь от снимка до готового изделия.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Glossary mini -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2>Короткий словарь</h2>
+        <p>Несколько терминов простыми словами</p>
+      </div>
+      <div class="glossary">
+        <div class="glossary-item">
+          <strong>Биосовместимый материал</strong>
+          <span>Материал, который организм не отторгает и который не вызывает сильного воспаления.</span>
+        </div>
+        <div class="glossary-item">
+          <strong>Пористость</strong>
+          <span>Доля «дырочек» в каркасе. Нужна, чтобы клетки и сосуды могли прорастать внутрь.</span>
+        </div>
+        <div class="glossary-item">
+          <strong>PCL (поликапролактон)</strong>
+          <span>Биоразлагаемый пластик. Организм постепенно заменяет его своей тканью.</span>
+        </div>
+        <div class="glossary-item">
+          <strong>Гидрогель</strong>
+          <span>Мягкий материал, похожий на желе. Хорошо удерживает воду и близок к живым тканям.</span>
+        </div>
+        <div class="glossary-item">
+          <strong>Память формы</strong>
+          <span>Материал «запоминает» форму и возвращается к ней при нагреве или другом сигнале.</span>
+        </div>
+        <div class="glossary-item">
+          <strong>Цифровой двойник</strong>
+          <span>Виртуальная копия изделия. По ней можно проверять и улучшать дизайн без лишних проб.</span>
+        </div>
+        <div class="glossary-item">
+          <strong>FDM</strong>
+          <span>Самый распространённый способ 3D-печати: материал выдавливается через нагретое сопло слоями.</span>
+        </div>
+        <div class="glossary-item">
+          <strong>MVP</strong>
+          <span>Минимально рабочая версия продукта — то, что уже можно показывать и тестировать.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next steps / Contact -->
+  <section id="contact" class="section cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <h2>Что делаем дальше</h2>
+        <p class="cta-lead">Сейчас ищем грантовую поддержку и партнёров для первых шагов</p>
+        <div class="cta-grid">
+          <div class="cta-item">
+            <strong>01</strong>
+            <span>Пилоты с 2–3 лабораториями ортопедии и тканевой инженерии</span>
+          </div>
+          <div class="cta-item">
+            <strong>02</strong>
+            <span>Сбор открытых МРТ + синтетики для дообучения моделей</span>
+          </div>
+          <div class="cta-item">
+            <strong>03</strong>
+            <span>Интеграция с 1–2 реальными системами печати</span>
+          </div>
+          <div class="cta-item">
+            <strong>04</strong>
+            <span>Pre-seed / гранты (deep-tech, medtech) на Phase 1–2</span>
+          </div>
+        </div>
+        <div class="cta-actions">
+          <a href="mailto:hello@neuroforge.example" class="btn btn-primary">Написать нам</a>
+          <a href="#problem" class="btn btn-outline">Вернуться к началу</a>
+        </div>
+        <p class="cta-disclaimer">Research Use Only · Студенческий проект · 2026</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>NeuroForge BioMaterials</strong>
+        <span>AI-платформа персонализированных умных биоматериалов</span>
+      </div>
+      <div class="footer-meta">
+        <span>От снимка МРТ до готового биоматериала — за часы</span>
+        <span>© 2026 · Research Use Only</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/pwa.js"></script>
+  <script src="js/viewer.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
